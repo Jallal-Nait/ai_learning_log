@@ -1,9 +1,15 @@
 import tensorflow as tf
-from tensorflow.keras import layers, models
 import numpy as np
 import matplotlib.pyplot as plt
 import os
+import sys
 
+try:
+    from tensorflow.keras import layers, models
+except Exception as e:
+    print("Could not load TensorFlow", e)
+    sys.exit(1)
+    
 os.environ['TF_ENABLE_ONEDNN_OPTS'] = "0"
 
 if __name__ == "__main__":
